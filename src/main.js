@@ -40,3 +40,23 @@ document.addEventListener("click", (e) => {
     alert(`${title} toegevoegd aan favorieten!`);
   }
 });
+
+// 🎯 FILTER
+const filterSelect = document.querySelector("#filter");
+
+filterSelect.addEventListener("change", (e) => {
+
+  const value = e.target.value;
+
+  if (value === "all") {
+    displayAnime(animeList);
+    return;
+  }
+
+  const filtered = animeList.filter(anime =>
+    anime.status === value
+  );
+
+  displayAnime(filtered);
+
+});
