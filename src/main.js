@@ -11,7 +11,7 @@ const loadData = async () => {
 
 loadData();
 
-// 🔍 ZOEKFUNCTIE
+// 🔍 Zoekfunctie
 const searchInput = document.querySelector("#search");
 
 searchInput.addEventListener("input", (e) => {
@@ -22,4 +22,21 @@ searchInput.addEventListener("input", (e) => {
   );
 
   displayAnime(filtered);
+});
+
+// ⭐ Favorieten opslaan
+document.addEventListener("click", (e) => {
+
+  if (e.target.classList.contains("favorite-btn")) {
+
+    const title = e.target.dataset.title;
+
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    favorites.push(title);
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+
+    alert(`${title} toegevoegd aan favorieten!`);
+  }
 });
