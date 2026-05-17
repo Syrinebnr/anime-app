@@ -60,3 +60,26 @@ filterSelect.addEventListener("change", (e) => {
   displayAnime(filtered);
 
 });
+
+// SORTEREN
+const sortSelect = document.querySelector("#sort");
+
+sortSelect.addEventListener("change", (e) => {
+
+  const value = e.target.value;
+
+  let sortedAnime = [...animeList];
+
+  if (value === "high") {
+
+    sortedAnime.sort((a, b) => b.score - a.score);
+
+  } else if (value === "low") {
+
+    sortedAnime.sort((a, b) => a.score - b.score);
+
+  }
+
+  displayAnime(sortedAnime);
+
+});
