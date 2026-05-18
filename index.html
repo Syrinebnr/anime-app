@@ -1,25 +1,33 @@
 <body>
-  <h1>Anime Explorer</h1>
 
-  <input type="text" id="search" placeholder="Zoek anime..." />
+  <div class="hero">
+    <h1>ANIME EXPLORER</h1>
+    <p>Explore the world of anime</p>
+  </div>
 
-  <select id="filter">
-  <option value="all">Alle anime</option>
-  <option value="Currently Airing">Airing</option>
-  <option value="Finished Airing">Finished</option>
-</select>
+  <div class="top-controls">
 
-<select id="sort">
-  <option value="default">Sorteer</option>
-  <option value="high">Hoogste score</option>
-  <option value="low">Laagste score</option>
-</select>
+    <input type="text" id="search" placeholder="Zoek anime..." />
 
-<button id="theme-btn">🌙 Toggle Theme</button>
+    <select id="filter">
+      <option value="all">Alle anime</option>
+      <option value="Currently Airing">Airing</option>
+      <option value="Finished Airing">Finished</option>
+    </select>
 
-<div id="app"></div>
+    <select id="sort">
+      <option value="default">Sorteer</option>
+      <option value="high">Hoogste score</option>
+      <option value="low">Laagste score</option>
+    </select>
+
+    <button id="theme-btn">Toggle Theme</button>
+
+  </div>
+
+  <div id="app"></div>
 
   <script type="module" src="/src/main.js"></script>
-</body>
 
+</body>
 
