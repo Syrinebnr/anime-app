@@ -83,3 +83,29 @@ sortSelect.addEventListener("change", (e) => {
   displayAnime(sortedAnime);
 
 });
+
+// 🌙 THEME SWITCHER
+const themeBtn = document.querySelector("#theme-btn");
+
+// opgeslagen theme checken
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+  document.body.classList.add("light-mode");
+}
+
+themeBtn.addEventListener("click", () => {
+
+  document.body.classList.toggle("light-mode");
+
+  if (document.body.classList.contains("light-mode")) {
+
+    localStorage.setItem("theme", "light");
+
+  } else {
+
+    localStorage.setItem("theme", "dark");
+
+  }
+
+});
