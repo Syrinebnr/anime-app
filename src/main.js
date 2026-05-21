@@ -4,41 +4,31 @@ import { displayAnime } from "./ui.js";
 
 let animeList = [];
 
+
+// DATA LADEN
 const loadData = async () => {
+
   animeList = await getAnime();
+
   displayAnime(animeList);
+
 };
 
 loadData();
 
-// 🔍 Zoekfunctie
+// 🔍 SEARCH
 const searchInput = document.querySelector("#search");
 
 searchInput.addEventListener("input", (e) => {
+
   const value = e.target.value.toLowerCase();
 
-  const filtered = animeList.filter(anime =>
+  const filteredAnime = animeList.filter((anime) =>
     anime.title.toLowerCase().includes(value)
   );
 
-  displayAnime(filtered);
-});
+  displayAnime(filteredAnime);
 
-// ⭐ Favorieten opslaan
-document.addEventListener("click", (e) => {
-
-  if (e.target.classList.contains("favorite-btn")) {
-
-    const title = e.target.dataset.title;
-
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-    favorites.push(title);
-
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-
-    alert(`${title} toegevoegd aan favorieten!`);
-  }
 });
 
 // 🎯 FILTER
@@ -48,20 +38,41 @@ filterSelect.addEventListener("change", (e) => {
 
   const value = e.target.value;
 
+  // ALLES
   if (value === "all") {
+
     displayAnime(animeList);
-    return;
+
   }
 
-  const filtered = animeList.filter(anime =>
-    anime.status === value
-  );
+  // FAVORIETEN
+  else if (value === "favorites") {
 
-  displayAnime(filtered);
+    const favorites =
+      JSON.parse(localStorage.getItem("favorites")) || [];
+
+    const favoriteAnime = animeList.filter((anime) =>
+      favorites.includes(anime.title)
+    );
+
+    displayAnime(favoriteAnime);
+
+  }
+
+  // AIRING / FINISHED
+  else {
+
+    const filteredAnime = animeList.filter(
+      (anime) => anime.status === value
+    );
+
+    displayAnime(filteredAnime);
+
+  }
 
 });
 
-// SORTEREN
+// ⭐ SORTING
 const sortSelect = document.querySelector("#sort");
 
 sortSelect.addEventListener("change", (e) => {
@@ -70,17 +81,49 @@ sortSelect.addEventListener("change", (e) => {
 
   let sortedAnime = [...animeList];
 
+  // HOOGSTE SCORE
   if (value === "high") {
 
     sortedAnime.sort((a, b) => b.score - a.score);
 
-  } else if (value === "low") {
+  }
+
+  // LAAGSTE SCORE
+  else if (value === "low") {
 
     sortedAnime.sort((a, b) => a.score - b.score);
 
   }
 
   displayAnime(sortedAnime);
+
+});
+
+// ❤️ FAVORIETEN OPSLAAN
+document.addEventListener("click", (e) => {
+
+  if (e.target.classList.contains("favorite-btn")) {
+
+    const title = e.target.dataset.title;
+
+    let favorites =
+      JSON.parse(localStorage.getItem("favorites")) || [];
+
+    // dubbele favorieten vermijden
+    if (!favorites.includes(title)) {
+
+      favorites.push(title);
+
+      localStorage.setItem(
+        "favorites",
+        JSON.stringify(favorites)
+      );
+
+      alert(`${title} toegevoegd aan favorieten!`);
+
+    }
+
+  }
 
 });
 
@@ -91,7 +134,9 @@ const themeBtn = document.querySelector("#theme-btn");
 const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "light") {
+
   document.body.classList.add("light-mode");
+
 }
 
 themeBtn.addEventListener("click", () => {
@@ -102,7 +147,9 @@ themeBtn.addEventListener("click", () => {
 
     localStorage.setItem("theme", "light");
 
-  } else {
+  }
+
+  else {
 
     localStorage.setItem("theme", "dark");
 
