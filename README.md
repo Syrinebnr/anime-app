@@ -1,53 +1,88 @@
-# Anime Explorer
+Anime Explorer
 
-Anime Explorer is een moderne anime webapp gemaakt met JavaScript en Vite.
+Een interactieve single-page applicatie voor het vak Web Advanced.
+Met deze app kan je anime ontdekken, zoeken, filteren, sorteren en toevoegen aan favorieten.
 
-Gebruikers kunnen:
-- anime zoeken
-- filteren
-- sorteren
-- favorieten opslaan
-- dark/light mode gebruiken
+Waarom anime?
 
-## Features
+Ik kijk zelf graag anime en vond het daarom leuker om een project te maken rond iets waarin ik echt geïnteresseerd ben. Hierdoor wist ik beter welke informatie belangrijk was en hoe ik de interface aantrekkelijk kon maken. De Jikan API is gratis, eenvoudig te gebruiken en bevat enorm veel anime-data, wat perfect was voor dit project.
 
-- Zoekfunctie
-- Filter op status
-- Sorting op score
-- Favorieten systeem
-- LocalStorage
-- Responsive design
-- Dark/Light mode
-- Anime API integratie
+Wat doet de app?
+Anime ophalen via de Jikan Anime API
+Anime kaarten tonen met afbeelding, score en status
+Zoeken op anime naam
+Filteren op status (Airing / Finished)
+Sorteren op hoogste of laagste score
+Favorieten toevoegen en verwijderen
+Dark / Light theme switch
+Moderne anime-style interface
+Responsive design voor verschillende schermgroottes
+Gebruikte API
 
-## Gebruikte technologieën
+Jikan Anime API — https://jikan.moe/
 
-- HTML
-- CSS
-- JavaScript
-- Vite
-- Jikan API
+Gratis publieke API voor anime-data gebaseerd op MyAnimeList.
 
-## Installatie
-
-```bash
+Installatie
 npm install
 npm run dev
 
-## Screenshots
+Open daarna:
 
-### Homepage
+http://localhost:5173
 
-![Homepage](./screenshots/homepage.png)
+Voor een productie-build:
 
-### Favorites
-
-![Favorites](./screenshots/favorieten.png)
-
-### Search
-
-![Search](./screenshots/search.png)
-
-### Light Mode
-
-![Light Mode](./screenshots/light.png)
+npm run build
+Mappenstructuur
+anime-app/
+├── index.html
+├── package.json
+├── README.md
+├── public/
+├── screenshots/
+└── src/
+    ├── main.js
+    ├── api.js
+    ├── ui.js
+    ├── counter.js
+    ├── style.css
+    └── assets/
+Technische vereisten
+DOM manipulatie
+Elementen selecteren met getElementById
+Dynamisch anime kaarten genereren
+innerHTML gebruiken om content te tonen
+Events koppelen met addEventListener
+Modern JavaScript
+const en let
+Arrow functions
+Template literals
+Array methods (filter, sort, map)
+Async / Await
+Fetch API
+LocalStorage
+Modules (import/export)
+Data & API
+Anime data ophalen met fetch
+JSON verwerken via response.json()
+Data tonen in kaarten
+Opslag & functionaliteiten
+Favorieten bewaren met localStorage
+Theme voorkeur bewaren
+Zoekfunctionaliteit
+Filtering en sorting
+Styling & layout
+CSS Grid voor anime kaarten
+Flexbox voor controls
+Responsive design
+Dark anime UI styling
+Hover effecten en animaties
+Tooling
+Vite
+Modulaire bestandenstructuur
+Git & GitHub
+Gebruikersvoorkeuren (LocalStorage)
+Sleutel	Wat wordt opgeslagen
+anime_theme	dark of light
+anime_favorites	favoriete anime
