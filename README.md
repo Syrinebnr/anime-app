@@ -140,3 +140,11 @@ MDN Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 MDN LocalStorage: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 Vite Docs: https://vitejs.dev/
 ChatGPT (OpenAI): hulp bij debugging, README structuur en UI verbeteringen
+
+SCREEMSHOTS
+<img width="2243" height="1296" alt="Screenshot 2026-05-25 021717" src="https://github.com/user-attachments/assets/349474e2-ba75-4a05-894b-e9cc5fe578a4" />
+
+<img width="2243" height="1296" alt="Screenshot 2026-05-25 021717" src="https://github.com/user-attachments/assets/b2874685-31e2-420d-996b-3a150c51617f" />
+<img width="2230" height="1404" alt="Screenshot 2026-05-25 021929" src="https://github.com/user-attachments/assets/75d086f0-b19e-48c8-902d-1aca81f0a599" />
+<img width="2234" height="1399" alt="Screenshot 2026-05-25 021918" src="https://github.com/user-attachments/assets/1e2b4176-f4ed-4909-8505-44c8eaec3063" />
+
