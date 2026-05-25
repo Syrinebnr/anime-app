@@ -33,3 +33,21 @@ Gebruikers kunnen:
 ```bash
 npm install
 npm run dev
+
+## Screenshots
+
+### Homepage
+
+![Homepage](./screenshots/homepage.png)
+
+### Favorites
+
+![Favorites](./screenshots/favorieten.png)
+
+### Search
+
+![Search](./screenshots/search.png)
+
+### Light Mode
+
+![Light Mode](./screenshots/light.png)
